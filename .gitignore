@@ -12,6 +12,9 @@ test/tmp
 test/version_tmp
 tmp
 
+# Eclipse Artifacts
+.project
+
 # YARD artifacts
 .yardoc
 _yardoc
