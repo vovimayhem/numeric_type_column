@@ -16,7 +16,7 @@ Gem::Specification.new do |s|
   s.summary     = "A collection of patches to Rails ActiveRecord that supports numeric type columns."
   s.description = "A collection of patches to Rails ActiveRecord - Unsigned Integer Columns, numeric STI column, numeric Polymorphic type column - which helps with partitioning in MySQL."
 
-  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "activerecord", "~> 3.2.3"
