@@ -24,7 +24,7 @@ module NumericTypeColumn
         
         # ActiveRecord::Inheritance::ClassMethods#find_sti_class
         def find_sti_class(type_id)
-          #puts "(MonkeyPatch) VovCore::HasNumericInheritanceColumn::ClassMethods#find_sti_class"
+          puts "(MonkeyPatch) NumericTypeColumn::ActiveRecord::BaseExtension: find_sti_class(type_id: #{type_id} )... #{base_class.inheritance_map.inspect}"
           base_class.inheritance_map[type_id].constantize
         end
         
@@ -39,7 +39,7 @@ module NumericTypeColumn
         # ActiveRecord::Base
         def relation #:nodoc:
           #puts "(MonkeyPatch) VovCore::HasNumericInheritanceColumn::ClassMethods#relation"
-          @relation ||= ActiveRecord::Relation.new(self, arel_table)
+          @relation ||= ::ActiveRecord::Relation.new(self, arel_table)
           if finder_needs_type_condition?
             sti_numeric_value = base_class.inheritance_map.key(sti_name)
             @relation.where(type_condition).create_with(inheritance_column.to_sym => sti_numeric_value)

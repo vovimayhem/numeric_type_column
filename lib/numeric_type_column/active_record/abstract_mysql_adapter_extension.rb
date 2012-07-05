@@ -6,17 +6,13 @@ module NumericTypeColumn
   
     module AbstractMysqlAdapterExtension  
     
-      # Override: toma en cuenta la opcion :mysql_options, para definir opciones propias de MySQL sin 'molestar' otros adapters...
-      def create_table(table_name, options = {}) #:nodoc:
-        super(table_name, options.reverse_merge(:options => options[:mysql_options] ? options[:mysql_options] : "ENGINE=InnoDB"))
-      end
-      
       def self.included(base)
         #puts "NumericTypeColumn::ActiveRecord::AbstractMysqlAdapterExtension included to #{base.name}!"
         base::NATIVE_DATABASE_TYPES[:primary_key] = 'INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY'
         base.send :alias_method_chain, :add_column_sql,       :unsigned
         base.send :alias_method_chain, :type_to_sql,          :unsigned
         base.send :alias_method_chain, :add_column_options!,  :comment
+        #base.send :alias_method_chain, :create_table,         :mysql_options
       end
 
 =begin
@@ -33,6 +29,12 @@ module NumericTypeColumn
         def extract_unsigned(sql_type)
           false
         end
+      end
+=end
+=begin
+      def create_table_with_mysql_options(table_name, options = {}) #:nodoc:
+        puts "NumericTypeColumn::ActiveRecord::AbstractMysqlAdapterExtension: create_table(table_name: #{table_name}, options: #{options})"
+        create_table_without_mysql_options(table_name, options.reverse_merge(options: options[:mysql_options] ? options[:mysql_options] : "ENGINE=InnoDB"))
       end
 =end
       protected
