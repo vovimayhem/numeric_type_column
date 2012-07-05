@@ -9,7 +9,7 @@ require "numeric_type_column/version"
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
   s.name        = "numeric_type_column"
-  s.version     = NaranyaDatabase::VERSION
+  s.version     = NumericTypeColumn::VERSION
   s.authors     = ["Roberto Quintanilla Gonzalez"]
   s.email       = ["roberto.quintanilla@gmail.com"]
   s.homepage    = "http://apphouse.naranya.net"
