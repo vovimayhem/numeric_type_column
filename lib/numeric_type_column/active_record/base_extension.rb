@@ -24,7 +24,7 @@ module NumericTypeColumn
         
         # ActiveRecord::Inheritance::ClassMethods#find_sti_class
         def find_sti_class(type_id)
-          puts "(MonkeyPatch) NumericTypeColumn::ActiveRecord::BaseExtension: find_sti_class(type_id: #{type_id} )... #{base_class.inheritance_map.inspect}"
+          # puts "(MonkeyPatch) NumericTypeColumn::ActiveRecord::BaseExtension: find_sti_class(type_id: #{type_id} )... #{base_class.inheritance_map.inspect}"
           base_class.inheritance_map[type_id].constantize
         end
         
