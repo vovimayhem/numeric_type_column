@@ -1,0 +1,2 @@
+class Zone < Location
+end

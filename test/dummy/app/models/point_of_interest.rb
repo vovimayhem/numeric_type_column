@@ -1,0 +1,2 @@
+class PointOfInterest < Location
+end

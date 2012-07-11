@@ -1,0 +1,2 @@
+class ColloquialArea < Location
+end

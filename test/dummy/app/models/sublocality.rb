@@ -1,0 +1,2 @@
+class Sublocality < Location
+end

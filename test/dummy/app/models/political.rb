@@ -1,0 +1,2 @@
+class Political < Location
+end

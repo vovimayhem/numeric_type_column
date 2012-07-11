@@ -1,0 +1,2 @@
+class Intersection < Location
+end

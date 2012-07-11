@@ -1,0 +1,2 @@
+class Premise < Location
+end

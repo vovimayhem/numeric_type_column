@@ -1,0 +1,2 @@
+class StreetNumber < Location
+end

@@ -1,0 +1,2 @@
+class PostBox < Location
+end

@@ -1,0 +1,2 @@
+class PostalCode < Location
+end

@@ -1,0 +1,2 @@
+class NaturalFeature < Location
+end
