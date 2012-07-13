@@ -14,7 +14,7 @@ module NumericTypeColumn
         ::ActiveRecord::Base.extend NumericTypeColumn::ActiveRecord::BaseExtension
         
         # Patch para permitir polymorphs con columna foreign_type numerica:
-        #::ActiveRecord::Associations::BelongsToPolymorphicAssociation.send :include, NumericTypeColumn::ActiveRecord::BelongsToPolymorphicAssociationExtension
+        #::ActiveRecord::Associations::BelongsToPolymorphicAssociation.extend NumericTypeColumn::ActiveRecord::BelongsToPolymorphicAssociationExtension
         
         
       end
