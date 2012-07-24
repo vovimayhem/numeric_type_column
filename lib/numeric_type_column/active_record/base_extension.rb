@@ -61,7 +61,7 @@ module NumericTypeColumn
           # Setear el atributo de inheritance_column:
           send("#{self.class.inheritance_column.to_sym}=", self.class.base_class.inheritance_map.key(self.class.sti_name))
           
-          raise ReadOnlyRecord if readonly?
+          raise ActiveRecord::ReadOnlyRecord if readonly?
           result = new_record? ? create : update
           result != false
         end
