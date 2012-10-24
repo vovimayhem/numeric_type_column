@@ -41,7 +41,7 @@ module NumericTypeColumn
       
       def add_column_sql_with_unsigned(table_name, column_name, type, options = {})
         #puts "NumericTypeColumn::ActiveRecord::AbstractMysqlAdapterExtension: add_column_sql_with_unsigned(table_name: #{table_name}, column_name: #{column_name}, type: #{type}, options: #{options})"
-        is_unsigned_valid = (((options.has_key? :unsigned) && (options[:unsigned] == true)) && (['integer', 'boolean'].include? type.to_s))
+        is_unsigned_valid = (((options.has_key? :unsigned) && (options[:unsigned] == true)) && (['integer', 'decimal', 'float', 'boolean'].include? type.to_s))
         add_column_sql = "ADD #{quote_column_name(column_name)} #{type_to_sql(type, options[:limit], options[:precision], options[:scale], is_unsigned_valid)}"
         add_column_options!(add_column_sql, options)
         add_column_position!(add_column_sql, options)
@@ -51,7 +51,7 @@ module NumericTypeColumn
       def type_to_sql_with_unsigned(type, limit = nil, precision = nil, scale = nil, unsigned = false)
         #puts "NumericTypeColumn::ActiveRecord::AbstractMysqlAdapterExtension: type_to_sql_with_unsigned(type: #{type}, limit: #{limit}, precision: #{precision}, scale: #{scale}, unsigned: #{unsigned})..."
         sql = type_to_sql_without_unsigned(type, limit, precision, scale)
-        sql << ' UNSIGNED' if unsigned && (['integer', 'boolean'].include? type.to_s)
+        sql << ' UNSIGNED' if unsigned && (['integer', 'decimal', 'float', 'boolean'].include? type.to_s)
         sql
       end
       
