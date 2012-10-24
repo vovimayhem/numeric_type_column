@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class LocationTypeTest < ActiveSupport::TestCase
+class UnsignedColumnsTestTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

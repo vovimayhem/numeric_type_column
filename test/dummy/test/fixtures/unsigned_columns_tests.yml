@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  integer_unsigned_column: 1
+  decimal_unsigned_column: 9.99
+  unsigned_float_column: 1.5
+  boolean_unsigned_column: false
+  references_unsigned_column: 
+
+two:
+  integer_unsigned_column: 1
+  decimal_unsigned_column: 9.99
+  unsigned_float_column: 1.5
+  boolean_unsigned_column: false
+  references_unsigned_column: 

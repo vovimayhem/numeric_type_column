@@ -1,0 +1,37 @@
+<%= form_for(@unsigned_columns_test) do |f| %>
+  <% if @unsigned_columns_test.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@unsigned_columns_test.errors.count, "error") %> prohibited this unsigned_columns_test from being saved:</h2>
+
+      <ul>
+      <% @unsigned_columns_test.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :integer_unsigned_column %><br />
+    <%= f.number_field :integer_unsigned_column %>
+  </div>
+  <div class="field">
+    <%= f.label :decimal_unsigned_column %><br />
+    <%= f.text_field :decimal_unsigned_column %>
+  </div>
+  <div class="field">
+    <%= f.label :unsigned_float_column %><br />
+    <%= f.text_field :unsigned_float_column %>
+  </div>
+  <div class="field">
+    <%= f.label :boolean_unsigned_column %><br />
+    <%= f.check_box :boolean_unsigned_column %>
+  </div>
+  <div class="field">
+    <%= f.label :references_unsigned_column %><br />
+    <%= f.text_field :references_unsigned_column %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

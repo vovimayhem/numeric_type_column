@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Integer unsigned column:</b>
+  <%= @unsigned_columns_test.integer_unsigned_column %>
+</p>
+
+<p>
+  <b>Decimal unsigned column:</b>
+  <%= @unsigned_columns_test.decimal_unsigned_column %>
+</p>
+
+<p>
+  <b>Unsigned float column:</b>
+  <%= @unsigned_columns_test.unsigned_float_column %>
+</p>
+
+<p>
+  <b>Boolean unsigned column:</b>
+  <%= @unsigned_columns_test.boolean_unsigned_column %>
+</p>
+
+<p>
+  <b>References unsigned column:</b>
+  <%= @unsigned_columns_test.references_unsigned_column %>
+</p>
+
+
+<%= link_to 'Edit', edit_unsigned_columns_test_path(@unsigned_columns_test) %> |
+<%= link_to 'Back', unsigned_columns_tests_path %>

@@ -368,3 +368,131 @@ Served asset /locations.js - 304 Not Modified (4ms)
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-07-11 00:08:59 -0500
 Served asset /application.js - 304 Not Modified (8ms)
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (5.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateLocationTypes (20120705034511)
+  [1m[35m (2.9ms)[0m  CREATE TABLE `location_types` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(45) COMMENT 'Nombre del tipo.') ENGINE=InnoDB
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120705034511')[0m
+Migrating to CreateLocations (20120705041521)
+  [1m[35m (2.6ms)[0m  CREATE TABLE `locations` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `type_id` int(11) UNSIGNED COMMENT 'llave foranea a location_type', `name` varchar(45) COMMENT 'Nombre de la locacion.') ENGINE=InnoDB
+  [1m[36m (4.5ms)[0m  [1mCREATE INDEX `FK_location_type` ON `locations` (`type_id`)[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120705041521')
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (5.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (4.4ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (17.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (2.8ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer.', `decimal_unsigned_column` decimal(4,2) COMMENT 'Prueba con columna tipo Decimal.', `unsigned_float_column` float COMMENT 'Prueba con columna tipo Float.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (4.1ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (1.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (2.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (2.7ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer.', `decimal_unsigned_column` decimal(4,2) COMMENT 'Prueba con columna tipo Decimal.', `unsigned_float_column` float COMMENT 'Prueba con columna tipo Float.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (5.9ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (3.9ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer.', `decimal_unsigned_column` decimal(4,2) COMMENT 'Prueba con columna tipo Decimal.', `unsigned_float_column` float COMMENT 'Prueba con columna tipo Float.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (4.4ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (2.5ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer.', `decimal_unsigned_column` decimal(4,2) COMMENT 'Prueba con columna tipo Decimal.', `unsigned_float_column` float COMMENT 'Prueba con columna tipo Float.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (3.8ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (4.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (3.6ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer.', `decimal_unsigned_column` decimal(4,2) COMMENT 'Prueba con columna tipo Decimal.', `unsigned_float_column` float COMMENT 'Prueba con columna tipo Float.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (4.3ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.5ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (4.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (2.9ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer.', `decimal_unsigned_column` decimal(4,2) COMMENT 'Prueba con columna tipo Decimal.', `unsigned_float_column` float COMMENT 'Prueba con columna tipo Float.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (4.0ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (3.1ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer.', `decimal_unsigned_column` decimal(4,2) COMMENT 'Prueba con columna tipo Decimal.', `unsigned_float_column` float COMMENT 'Prueba con columna tipo Float.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (3.8ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (3.3ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer Unsigned.', `integer_signed_column` smallint COMMENT 'Prueba con columna tipo Integer.', `string_column` varchar(24) COMMENT 'Prueba con columna tipo String.', `decimal_unsigned_column` decimal(4,2) COMMENT 'Prueba con columna tipo Decimal Unsigned.', `unsigned_float_column` float COMMENT 'Prueba con columna tipo Float Unsigned.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean Unsigned.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References Unsigned.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (3.9ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.9ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (3.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (4.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (2.8ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer Unsigned.', `integer_signed_column` smallint COMMENT 'Prueba con columna tipo Integer.', `string_column` varchar(24) COMMENT 'Prueba con columna tipo String.', `decimal_unsigned_column` decimal(4,2) UNSIGNED COMMENT 'Prueba con columna tipo Decimal Unsigned.', `unsigned_float_column` float UNSIGNED COMMENT 'Prueba con columna tipo Float Unsigned.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean Unsigned.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References Unsigned.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (4.5ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (6.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (2.7ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer Unsigned.', `integer_signed_column` smallint COMMENT 'Prueba con columna tipo Integer.', `string_column` varchar(24) COMMENT 'Prueba con columna tipo String.', `decimal_unsigned_column` decimal(4,2) UNSIGNED COMMENT 'Prueba con columna tipo Decimal Unsigned.', `unsigned_float_column` float UNSIGNED COMMENT 'Prueba con columna tipo Float Unsigned.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean Unsigned.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References Unsigned.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (5.4ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (1.9ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (0.4ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+Connecting to database specified by database.yml
+  [1m[36m (4.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (2.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateUnsignedColumnsTests (20121024034824)
+  [1m[35m (2.8ms)[0m  CREATE TABLE `unsigned_columns_tests` (`id` INT UNSIGNED DEFAULT NULL auto_increment PRIMARY KEY, `integer_unsigned_column` smallint UNSIGNED COMMENT 'Prueba con columna tipo Integer Unsigned.', `integer_signed_column` smallint COMMENT 'Prueba con columna tipo Integer.', `string_column` varchar(24) COMMENT 'Prueba con columna tipo String.', `decimal_unsigned_column` decimal(4,2) UNSIGNED COMMENT 'Prueba con columna tipo Decimal Unsigned.', `unsigned_float_column` float UNSIGNED COMMENT 'Prueba con columna tipo Float Unsigned.', `boolean_unsigned_column` tinyint(1) UNSIGNED COMMENT 'Prueba con columna tipo Boolean Unsigned.', `references_unsigned_column_id` int(11) UNSIGNED COMMENT 'Prueba con columna tipo References Unsigned.', `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) COMMENT='Pruebas de unsigned columns.'
+  [1m[36m (4.2ms)[0m  [1mCREATE INDEX `FK_unsigned_references_column_test` ON `unsigned_columns_tests` (`references_unsigned_column_id`)[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20121024034824')
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m

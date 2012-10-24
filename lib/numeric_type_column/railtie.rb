@@ -9,6 +9,7 @@ module NumericTypeColumn
         ::ActiveRecord::ConnectionAdapters::ColumnDefinition.send     :include, NumericTypeColumn::ActiveRecord::ColumnDefinitionExtension
         ::ActiveRecord::ConnectionAdapters::TableDefinition.send      :include, NumericTypeColumn::ActiveRecord::TableDefinitionExtension
         ::ActiveRecord::ConnectionAdapters::AbstractMysqlAdapter.send :include, NumericTypeColumn::ActiveRecord::AbstractMysqlAdapterExtension
+        ::ActiveRecord::SchemaDumper.send                             :include, NumericTypeColumn::ActiveRecord::SchemaDumperExtension
         
         # Patch para permitir STI con columna numerica:
         ::ActiveRecord::Base.extend NumericTypeColumn::ActiveRecord::BaseExtension

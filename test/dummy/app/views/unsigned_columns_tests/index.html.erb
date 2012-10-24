@@ -1,0 +1,31 @@
+<h1>Listing unsigned_columns_tests</h1>
+
+<table>
+  <tr>
+    <th>Integer unsigned column</th>
+    <th>Decimal unsigned column</th>
+    <th>Unsigned float column</th>
+    <th>Boolean unsigned column</th>
+    <th>References unsigned column</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @unsigned_columns_tests.each do |unsigned_columns_test| %>
+  <tr>
+    <td><%= unsigned_columns_test.integer_unsigned_column %></td>
+    <td><%= unsigned_columns_test.decimal_unsigned_column %></td>
+    <td><%= unsigned_columns_test.unsigned_float_column %></td>
+    <td><%= unsigned_columns_test.boolean_unsigned_column %></td>
+    <td><%= unsigned_columns_test.references_unsigned_column %></td>
+    <td><%= link_to 'Show', unsigned_columns_test %></td>
+    <td><%= link_to 'Edit', edit_unsigned_columns_test_path(unsigned_columns_test) %></td>
+    <td><%= link_to 'Destroy', unsigned_columns_test, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Unsigned columns test', new_unsigned_columns_test_path %>

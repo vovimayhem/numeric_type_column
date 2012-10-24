@@ -1,7 +1,5 @@
 Dummy::Application.routes.draw do
-  resources :locations
-
-  resources :location_types
+  resources :unsigned_columns_tests
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
