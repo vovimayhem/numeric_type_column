@@ -30,7 +30,8 @@ module NumericTypeColumn
             tbl.print ", :id => false"
           end
           tbl.print ", :force => true"
-          tbl.print ", :options =>\"#{@connection.table_options(table)}\""
+          #TODO: Cambiar que en vez de ponerlo en :options, ponerlo en :mysql_options:
+          #tbl.print ", :options =>\"#{@connection.table_options(table)}\""
           tbl.puts " do |t|"
 
           # then dump all non-primary key columns
