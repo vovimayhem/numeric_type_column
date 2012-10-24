@@ -1,2 +1,0 @@
-class Premise < Location
-end

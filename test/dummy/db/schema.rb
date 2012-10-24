@@ -11,16 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121024034824) do
+ActiveRecord::Schema.define(:version => 20121024090232) do
 
-  create_table "unsigned_columns_tests", :force => true do |t|
-    t.integer  "integer_unsigned_column",       :limit => 2,  :unsigned => true
-    t.integer  "integer_signed_column",         :limit => 2
-    t.string   "string_column",                 :limit => 24
-    t.decimal  "decimal_unsigned_column",                     :unsigned => true, :precision => 4, :scale => 2
-    t.float    "unsigned_float_column",                       :unsigned => true
-    t.boolean  "boolean_unsigned_column",                     :unsigned => true
-    t.integer  "references_unsigned_column_id",               :unsigned => true
+  create_table "join_table_tests", :id => false, :force => true, :options =>"ENGINE=InnoDB COLLATE=utf8_unicode_ci COMMENT='Pruebas de join_table (:id => false).'" do |t|
+    t.integer "object_a_id", :limit => 2, :unsigned => true, :comment => "Prueba con columna tipo References Unsigned (A)."
+    t.integer "object_b_id", :limit => 2, :unsigned => true, :comment => "Prueba con columna tipo References Unsigned (B)."
+  end
+
+  add_index "join_table_tests", ["object_a_id"], :name => "FK_join_table_test_a"
+  add_index "join_table_tests", ["object_b_id"], :name => "FK_join_table_test_b"
+
+  create_table "unsigned_columns_tests", :force => true, :options =>"ENGINE=InnoDB COLLATE=utf8_unicode_ci COMMENT='Pruebas de unsigned columns.'" do |t|
+    t.integer  "integer_unsigned_column",       :limit => 2,  :unsigned => true,                                               :comment => "Prueba con columna tipo Integer Unsigned."
+    t.integer  "integer_signed_column",         :limit => 2,                                                                   :comment => "Prueba con columna tipo Integer."
+    t.string   "string_column",                 :limit => 24,                                                                  :comment => "Prueba con columna tipo String."
+    t.decimal  "decimal_unsigned_column",                     :unsigned => true, :precision => 4, :scale => 2,                 :comment => "Prueba con columna tipo Decimal Unsigned."
+    t.float    "unsigned_float_column",                       :unsigned => true,                                               :comment => "Prueba con columna tipo Float Unsigned."
+    t.boolean  "boolean_unsigned_column",                     :unsigned => true,                                               :comment => "Prueba con columna tipo Boolean Unsigned."
+    t.integer  "references_unsigned_column_id",               :unsigned => true,                                               :comment => "Prueba con columna tipo References Unsigned."
     t.datetime "created_at",                                                                                   :null => false
     t.datetime "updated_at",                                                                                   :null => false
   end

@@ -1,16 +1,16 @@
 module NumericTypeColumn
   module ActiveRecord
-    module SchemaDumperExtension
+    module SchemaDumperPatch
       
       def self.included(base)
-        #puts "NumericTypeColumn::ActiveRecord::SchemaDumperExtension included to #{base.name}!"
+        #puts "NumericTypeColumn::ActiveRecord::SchemaDumperPatch included to #{base.name}!"
         base.send :alias_method_chain, :table,  :unsigned_and_comment
       end
       
       # Override de #table
       def table_with_unsigned_and_comment(table, stream)
         columns = @connection.columns(table)
-        #puts "!!!! - columns: #{columns}"
+        
         begin
           tbl = StringIO.new
 
@@ -20,7 +20,7 @@ module NumericTypeColumn
           elsif @connection.respond_to?(:primary_key)
             pk = @connection.primary_key(table)
           end
-
+          
           tbl.print "  create_table #{remove_prefix_and_suffix(table).inspect}"
           if columns.detect { |c| c.name == pk }
             if pk != 'id'
@@ -30,6 +30,7 @@ module NumericTypeColumn
             tbl.print ", :id => false"
           end
           tbl.print ", :force => true"
+          tbl.print ", :options =>\"#{@connection.table_options(table)}\""
           tbl.puts " do |t|"
 
           # then dump all non-primary key columns
@@ -52,12 +53,13 @@ module NumericTypeColumn
             spec[:scale]     = column.scale.inspect if column.scale
             spec[:null]      = 'false' unless column.null
             spec[:default]   = default_string(column.default) if column.has_default?
+            spec[:comment]   = "\"#{column.comment}\"" unless column.comment.nil?
             (spec.keys - [:name, :type]).each{ |k| spec[k].insert(0, "#{k.inspect} => ")}
             spec
           end.compact
-
+          
           # find all migration keys used in this table
-          keys = [:name, :limit, :unsigned, :precision, :scale, :default, :null] & column_specs.map{ |k| k.keys }.flatten
+          keys = [:name, :limit, :unsigned, :precision, :scale, :default, :null, :comment] & column_specs.map{ |k| k.keys }.flatten
 
           # figure out the lengths for each column based on above keys
           lengths = keys.map{ |key| column_specs.map{ |spec| spec[key] ? spec[key].length + 2 : 0 }.max }

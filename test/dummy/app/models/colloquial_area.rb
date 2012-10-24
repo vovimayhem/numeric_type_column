@@ -1,2 +1,0 @@
-class ColloquialArea < Location
-end

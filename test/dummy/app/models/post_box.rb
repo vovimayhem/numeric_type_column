@@ -1,2 +1,0 @@
-class PostBox < Location
-end

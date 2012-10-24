@@ -1,2 +1,0 @@
-class StreetAddress < Location
-end

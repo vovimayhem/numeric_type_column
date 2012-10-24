@@ -1,2 +1,0 @@
-class Intersection < Location
-end

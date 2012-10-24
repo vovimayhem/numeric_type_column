@@ -1,2 +1,0 @@
-class Country < Location
-end

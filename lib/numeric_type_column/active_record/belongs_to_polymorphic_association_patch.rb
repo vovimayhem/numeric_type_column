@@ -3,17 +3,17 @@
 module NumericTypeColumn
   module ActiveRecord
     
-    module BelongsToPolymorphicAssociationExtension
+    module BelongsToPolymorphicAssociationPatch
     
       def self.included(base)
-        #puts "NumericTypeColumn::ActiveRecord::BelongsToPolymorphicAssociationExtension included to #{base.name}!"
+        #puts "NumericTypeColumn::ActiveRecord::BelongsToPolymorphicAssociationPatch included to #{base.name}!"
         base.send :alias_method_chain, :klass,        :numeric_type_column
         base.send :alias_method_chain, :replace_keys, :numeric_type_column
       end
     
       def klass_with_numeric_type_column
       
-        #puts "NumericTypeColumn::ActiveRecord::BelongsToPolymorphicAssociationExtension: klass_with_numeric_type_column"
+        #puts "NumericTypeColumn::ActiveRecord::BelongsToPolymorphicAssociationPatch: klass_with_numeric_type_column"
       
         type = owner[reflection.foreign_type]
         
@@ -27,7 +27,7 @@ module NumericTypeColumn
 
       def replace_keys_with_numeric_type_column(record)
       
-        #puts "NumericTypeColumn::ActiveRecord::BelongsToPolymorphicAssociationExtension: replace_keys_with_numeric_type_column(record: #{record})"
+        #puts "NumericTypeColumn::ActiveRecord::BelongsToPolymorphicAssociationPatch: replace_keys_with_numeric_type_column(record: #{record})"
       
         super
         if owner.attribute_names.include?(reflection.foreign_type)

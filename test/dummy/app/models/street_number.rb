@@ -1,2 +1,0 @@
-class StreetNumber < Location
-end

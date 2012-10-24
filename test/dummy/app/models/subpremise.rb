@@ -1,2 +1,0 @@
-class Subpremise < Location
-end

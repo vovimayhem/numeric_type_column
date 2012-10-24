@@ -1,2 +1,0 @@
-class Locality < Location
-end
