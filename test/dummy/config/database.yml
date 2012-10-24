@@ -3,12 +3,23 @@
 # Si se ocupa cambiar algun setting de ésta base para 
 # el funcionamiento en tu máquina local, hay qué crear
 # un ambiente con otro nombre nuevo:
-development: &db_conn
+base_mysql: &base_mysql
   adapter: mysql2
   encoding: utf8
-  database: numeric_type_column_test
-  host: localhost
+  pool: 5
+  timeout: 5000
   
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
@@ -18,13 +29,15 @@ test:
   pool: 5
   timeout: 5000
 
-# Ambiente en cms2.yapp.net
 production:
-  <<: *db_conn
-  host: 172.30.7.150
+  adapter: sqlite3
+  database: db/production.sqlite3
+  pool: 5
+  timeout: 5000
 
 mayhem:
-  <<: *db_conn
+  <<: *base_mysql
   host: debian-wind
+  database: numeric_type_column_dummy
   username: u_yapp
   password: m_y4pp-

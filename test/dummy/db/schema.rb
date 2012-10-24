@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(:version => 20121024090232) do
 
-  create_table "join_table_tests", :id => false, :force => true, :options =>"ENGINE=InnoDB COLLATE=utf8_unicode_ci COMMENT='Pruebas de join_table (:id => false).'" do |t|
+  create_table "join_table_tests", :id => false, :force => true do |t|
     t.integer "object_a_id", :limit => 2, :unsigned => true, :comment => "Prueba con columna tipo References Unsigned (A)."
     t.integer "object_b_id", :limit => 2, :unsigned => true, :comment => "Prueba con columna tipo References Unsigned (B)."
   end
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20121024090232) do
   add_index "join_table_tests", ["object_a_id"], :name => "FK_join_table_test_a"
   add_index "join_table_tests", ["object_b_id"], :name => "FK_join_table_test_b"
 
-  create_table "unsigned_columns_tests", :force => true, :options =>"ENGINE=InnoDB COLLATE=utf8_unicode_ci COMMENT='Pruebas de unsigned columns.'" do |t|
+  create_table "unsigned_columns_tests", :force => true do |t|
     t.integer  "integer_unsigned_column",       :limit => 2,  :unsigned => true,                                               :comment => "Prueba con columna tipo Integer Unsigned."
     t.integer  "integer_signed_column",         :limit => 2,                                                                   :comment => "Prueba con columna tipo Integer."
     t.string   "string_column",                 :limit => 24,                                                                  :comment => "Prueba con columna tipo String."

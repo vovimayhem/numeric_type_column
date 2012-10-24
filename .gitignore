@@ -10,6 +10,7 @@ rdoc
 spec/reports
 test/tmp
 test/dummy/log/*
+test/dummy/db/*.sqlite3
 test/version_tmp
 tmp
 
