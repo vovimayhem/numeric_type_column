@@ -9,7 +9,7 @@ module NumericTypeColumn
         adaptr_module = "::ActiveRecord::ConnectionAdapters"
         "#{adaptr_module}::ColumnDefinition".constantize.send             :include, NumericTypeColumn::ActiveRecord::ColumnDefinitionPatch
         "#{adaptr_module}::TableDefinition".constantize.send              :include, NumericTypeColumn::ActiveRecord::TableDefinitionPatch
-        ["MysqlAdapter", "Mysql2Adapter"].each do |mysql_adapter_name|
+        ["MysqlAdapter", "Mysql2Adapter", 'Mysql2SpatialAdapter'].each do |mysql_adapter_name|
           if adaptr_module.constantize.const_defined? mysql_adapter_name
             "#{adaptr_module}::#{mysql_adapter_name}".constantize.send :include, NumericTypeColumn::ActiveRecord::MysqlAdapterPatch
           end
